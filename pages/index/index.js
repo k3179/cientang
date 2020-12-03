@@ -1,4 +1,8 @@
 //index.js
+
+const util = require("../../utils/util");
+const config = require("../config");
+
 //获取应用实例
 const app = getApp()
 
@@ -47,7 +51,33 @@ Page({
         }
       })
     }
-    wx.navigateTo({url:'../user_login/user_login'});
+
+
+    /*
+    wx.checkSession({
+      success(){
+
+      },
+      fail(){
+        
+      }
+    });
+    */
+    //wx.navigateTo({url:'../user_login/user_login'});
+    /*
+    wx.login({
+      success(res){
+        console.log(res);
+        util.post(app.url.getOpenId,{
+          code:res.code
+        },function(data){
+          console.log(data);
+          console.log(app.globalData.userInfo);
+        });
+        //console.log(res);
+      }
+    });
+    */
   },
   getUserInfo: function(e) {
     console.log(e)

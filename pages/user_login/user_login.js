@@ -1,4 +1,8 @@
 // pages/user_login/user_login.js
+import util from '../../utils/util.js'
+
+const app = getApp()
+
 Page({
 
   /**
@@ -25,13 +29,17 @@ Page({
   },
 
   formSubmit(e) {
-    wx.request({
-      url:'http://localhost:1405/app/user/login?userName=aaa&userPassword=bbb',
-      method: 'POST',
-      headers:{'Content-Type': 'application/json'},
-      success: function(res){
-        console.log(res);
-      }
+
+    if(!this.data.username){
+      util.alert('请输入用户名');
+      return;
+    }
+
+    util.post(app.url.userLogin,{
+      username:this.data.username,
+      password:this.data.password
+    },function(data){
+      console.log(data);
     });
   },
 

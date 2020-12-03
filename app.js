@@ -1,6 +1,27 @@
 //app.js
+import config from 'config.js'
+import util from 'utils/util.js'
+
 App({
   onLaunch: function () {
+    const app = this;
+
+    // 获取本地存储信息
+    var userInfo = wx.getStorageSync('user')
+
+    wx.login({
+      success(res){
+        console.log(res)
+        util.post(config.url.getOpenId,{
+          code:res.code
+        },function(data){
+          console.log(data)
+        });
+        //console.log(res);
+      }
+    })
+    
+    /*
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,13 +53,10 @@ App({
         }
       }
     })
+    */
   },
   globalData: {
     userInfo: null
-  },
-
-  url: {
-    userLogin: 'http://localhost:1405/app/user/login'
   }
 
 })
