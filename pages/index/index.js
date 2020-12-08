@@ -1,7 +1,7 @@
 //index.js
 
 const util = require("../../utils/util");
-const config = require("../config");
+const config = require("../../utils/config");
 
 //获取应用实例
 const app = getApp()

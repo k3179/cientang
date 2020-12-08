@@ -20,7 +20,7 @@ const alert = function(msg){
   })
 }
 
-const post = function(url,data,successCallback=null){
+const post = function(url,data,successCallback,failCallback){
   wx.request({
     url:url,
     method: 'POST',
@@ -31,8 +31,12 @@ const post = function(url,data,successCallback=null){
           successCallback(res.data);
         }
       }else{
-        if(res.data){
-          alert(res.data);
+        if(failCallback){
+          failCallback(res.statusCode,res.data);
+        }else{
+          if(res.data){
+            alert(res.data);
+          }
         }
       }
     },

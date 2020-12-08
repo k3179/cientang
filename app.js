@@ -1,26 +1,41 @@
 //app.js
-import config from 'config.js'
-import util from 'utils/util.js'
+import config from 'utils/config'
+import user from 'utils/user'
+import util from 'utils/util'
 
 App({
   onLaunch: function () {
-    const app = this;
-
+    const app = this
     // 获取本地存储信息
-    var userInfo = wx.getStorageSync('user')
+    var user = wx.getStorageSync('user')
 
-    wx.login({
-      success(res){
-        console.log(res)
-        util.post(config.url.getOpenId,{
-          code:res.code
-        },function(data){
-          console.log(data)
-        });
-        //console.log(res);
-      }
-    })
-    
+    // 没有存储的信息
+    if(!user){
+      wx.login({
+        success(res){
+          util.post(config.url.getWxInfo,{
+            code:res.code
+          },function(data){
+            // 微信信息保存到内存
+            app.globalData.wxInfo = {
+              code : res.code,
+              session_key : data.session_key,
+              openid : data.openid,
+              unionid : data.unionid
+            }
+            // 用微信信息获取用户信息
+            util.post(config.url.getUserInfo,app.globalData.wxInfo,function(data){
+              console.log(data)
+            },function(statusCode,data){
+              wx.navigateTo({url: "../user_login/user_login"})
+            })
+
+          })
+        }
+      })
+    }
+
+  
     /*
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -56,7 +71,9 @@ App({
     */
   },
   globalData: {
+    wxInfo: null,
     userInfo: null
+
   }
 
 })

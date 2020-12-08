@@ -1,5 +1,6 @@
 // pages/user_login/user_login.js
-import util from '../../utils/util.js'
+import util from '../../utils/util'
+import config from '../../utils/config'
 
 const app = getApp()
 
@@ -35,12 +36,22 @@ Page({
       return;
     }
 
-    util.post(app.url.userLogin,{
-      username:this.data.username,
-      password:this.data.password
-    },function(data){
-      console.log(data);
-    });
+    wx.login({
+      success(res){
+        util.post(config.url.userLogin,{
+          username:this.data.username,
+          password:this.data.password,
+          code:res.code
+        },function(data){
+          console.log(data);
+        });
+      },
+      fail(res){
+        alert("请稍后再试")
+      }
+    })
+
+
   },
 
   /**
