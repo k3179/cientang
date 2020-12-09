@@ -1,5 +1,6 @@
 // pages/user_login/user_login.js
 import util from '../../utils/util'
+import user from '../../utils/user'
 import config from '../../utils/config'
 
 const app = getApp()
@@ -32,24 +33,24 @@ Page({
   formSubmit(e) {
 
     if(!this.data.username){
-      util.alert('请输入用户名');
-      return;
+      util.alert('请输入用户名')
+      return
     }
 
-    wx.login({
-      success(res){
-        util.post(config.url.userLogin,{
-          username:this.data.username,
-          password:this.data.password,
-          code:res.code
-        },function(data){
-          console.log(data);
-        });
-      },
-      fail(res){
-        alert("请稍后再试")
+    util.post(config.url.userLogin,{
+      username:this.data.username,
+      password:this.data.password,
+      wxInfo:app.globalData.wxInfo
+    },function(data){
+      app.globalData.userInfo = {
+        UserId : data.UserId,
+        UserName : data.UserName,
+        UserHash : data.UserHash
       }
+      user.save(app.globalData.userInfo)
+      wx.navigateBack()
     })
+
 
 
   },
