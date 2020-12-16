@@ -2,8 +2,28 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/user_login/user_login"
+    "pages/user_login/user_login",
+    "pages/article/article",
+    "pages/mall-home/mall-home",
+    "pages/message-home/message-home"
   ],
+  "tabBar": {
+    "custom": true,
+    "color": "#999",
+    "selectedColor": "#d43030",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall-home/mall-home",
+        "text": "商城"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

@@ -1,0 +1,12 @@
+<!--pages/article/article.wxml-->
+<view class="video">
+  <video src="https://img.xiaopiu.com/video/default-video.mp4"></video>
+</view>
+<view class="article">
+  <text class="title">{{article.title}}</text>
+  <view class="info">
+    <text class="date">{{article.date}}</text>
+    <text class="read">{{article.read}}次播放</text>
+  </view>
+  <view class="content"><rich-text class="content-text" nodes="{{article.content}}"></rich-text></view>
+</view>

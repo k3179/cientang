@@ -1,0 +1,7 @@
+<!--pages/mall-home/mall-home.wxml-->
+<!--index.wxml-->
+<view class="container" style="height:1000px;background-color:#eee;overflow:scroll">
+
+  商城内容
+
+</view>

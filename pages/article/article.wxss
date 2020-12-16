@@ -1,0 +1,7 @@
+/* pages/article/article.wxss */
+.video  video {width:100%;}
+.article  {padding:1rem;}
+.article .title {font-size:1.1rem;}
+.article .info  {margin-top:.5rem;display:flex;justify-content:space-between;font-size:.85rem;color:#999;}
+.article .content {margin-top:1rem;font-size:1rem;}
+.article .content .content-text {text-indent:2rem;color:#505050;}

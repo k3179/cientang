@@ -1,3 +1,4 @@
 /**app.wxss**/
 @import "/assets/css/fontawesome/font-awesome.wxss";
 
+page {font-size:14px;box-sizing:border-box;}

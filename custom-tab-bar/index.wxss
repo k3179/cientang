@@ -1,0 +1,12 @@
+/* custom-tab-bar/index.wxss */
+.tab-bar {background-color:#fff;justify-content:space-around;border-top:1px solid #eee;display:flex;height:4rem;padding:0 5%;}
+.tab-bar  .tab-bar-one {display:flex;flex-direction:column;width:18%;align-items:center;justify-content:center;color:#999;}
+.tab-bar  .tab-bar-one .tab-icon  {font-size:1.5rem;text-align:center;}
+.tab-bar  .tab-bar-one .tab-text {font-size:.85rem;}
+.tab-bar  .tab-bar-one.selected {color:#000;}
+.tab-bar  .tab-bar-one .write {
+  display:flex;align-items:center;justify-content:center;
+  background-color:#d43030;color:#fff;border-radius:50%;
+  font-size:1.5rem;width:2.4rem;height:2.4rem;overflow:hidden;
+}
+.tab-bar  .tab-bar-one .write .icon {position:relative;top:.05rem;}

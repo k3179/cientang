@@ -1,0 +1,24 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="tab-bar">
+  <view class="tab-bar-one {{selected === 'home' ? 'selected' : ''}}" data-type="home" data-url="/pages/index/index" bindtap="switchTab">
+    <text class="tab-icon fa fa-home"></text>
+    <text class="tab-text">首页</text>
+  </view>
+  <view class="tab-bar-one {{selected === 'mall' ? 'selected' : ''}}" data-type="mall" data-url="/pages/mall-home/mall-home"  bindtap="switchTab">
+    <text class="tab-icon fa fa-shopping-cart"></text>
+    <text class="tab-text">商城</text>
+  </view>
+  <view class="tab-bar-one">
+    <view class="write">
+      <text class="icon fa fa-plus"></text>
+    </view>
+  </view>
+  <view class="tab-bar-one {{selected === 'message' ? 'selected' : ''}}" data-type="message" data-url="/pages/message-home/message-home">
+    <text class="tab-icon fa fa-envelope"></text>
+    <text class="tab-text">消息</text>
+  </view>
+  <view class="tab-bar-one {{selected === 'my' ? 'selected' : ''}}" data-type="my" data-url="/pages/my-home/my-home">
+    <text class="tab-icon fa fa-user"></text>
+    <text class="tab-text">我的</text>
+  </view>
+</view>
