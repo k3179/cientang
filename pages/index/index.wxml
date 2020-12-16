@@ -36,7 +36,7 @@
     <swiper-item>
       <view class="content">
         <view class="review-category">
-          <text>家庭1</text>
+          <text>家庭</text>
           <text>姻缘</text>
           <text>亲子</text>
           <text>健康</text>
