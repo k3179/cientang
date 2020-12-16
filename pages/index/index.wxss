@@ -19,6 +19,8 @@
 .article-list .article .info .date {color:#999;}
 
 /* 体验谈 */
+.review-category {padding:1rem 1.5rem 0 1.5rem;display:flex;justify-content:space-between;}
+.review-category text {flex-wrap:wrap;}
 .review-list {padding:.5rem 1rem;display:flex;flex-wrap:wrap;}
 .review-list .article {padding:.5rem;width:50%;box-sizing:border-box;}
 .review-list .article image {width:100%;}
