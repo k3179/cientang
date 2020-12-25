@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--/pages/index/index.wxml-->
 <view class="container">
   <view class="header">
     <view class="nav">
@@ -117,7 +117,4 @@
     <!-- /新闻 -->
   </swiper>
 
-
-
-  
 </view>
