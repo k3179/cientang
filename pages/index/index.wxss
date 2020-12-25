@@ -22,9 +22,9 @@
 .review-category {padding:1rem 1.5rem 0 1.5rem;display:flex;justify-content:space-between;}
 .review-category text {flex-wrap:wrap;}
 .review-list {padding:.5rem 1rem;display:flex;flex-wrap:wrap;}
-.review-list .article {padding:.5rem;width:50%;box-sizing:border-box;}
-.review-list .article image {width:100%;}
-.review-list .article .title {
+.review-list .review {padding:.5rem;width:50%;box-sizing:border-box;}
+.review-list .review image {width:100%;}
+.review-list .review .title {
   font-size:.8rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -32,4 +32,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.review-list .article .info {display:flex;justify-content:space-between;color:#999;margin-top:.25rem;}
+.review-list .review .info {display:flex;justify-content:space-between;color:#999;margin-top:.25rem;font-size:.8rem;}
+
+/* 心情墙 */
+.memo-list {padding:.5rem 1.25rem;display:flex;flex-direction:column;}
+.memo-list  .memo {display:flex;padding:1rem 0;border-bottom:1px solid #eee;}
+.memo-list  .memo-date {display:flex;flex:none;flex-direction:column;align-items:center;justify-content:flex-start;}
+.memo-list  .memo-date  .month  {font-size:.85rem;}
+.memo-list  .memo-date  .day {font-size:1.25rem;}
+.memo-list  .icon-feeling {width:2rem;height:2rem;display:inline-block;}
+.memo-list  .memo-content {flex:auto;display:flex;flex-direction:column;margin-left:1.25rem;}
+.memo-list  .author {display:flex;align-items:center;color:#6b99bc;font-weight:bold;}
+.memo-list  .author .avatar {width:2rem;height:2rem;border-radius:50%;}
+.memo-list  .memo-text {white-space:pre;margin-top:.75rem;}
+.memo-list  .photos {display:flex;margin-top:.75rem;}
+.memo-list  .photos image {width:32%;margin-left:3%;}
+.memo-list  .photos image:first-child {margin-left:0;}
+.memo-list  .photos-big image {width:67%;margin-top:.5rem;}
+.memo-list  .info {display:flex;margin-top:.75rem;color:#999;font-size:.8rem;position:relative;}
+.memo-list  .info .icon {margin-right:.25rem;}
+.memo-list  .info .like {width:5rem;}
+.memo-list  .info .liked {width:5rem;}
+.memo-list  .info .liked .icon {color:#d43030;}
+.memo-list  .info .liked .num {color:#000;font-weight:bold;}
+.memo-list  .info .more {flex:auto;display:flex;justify-content:flex-end;}
+.memo-list  .info .more .buttons {margin-right:.5rem;}
+.memo-list  .info .more .button {background-color:#808080;color:#fff;border-radius:.25rem;padding:.1rem .75rem;}
+.memo-list  .info .more .ellipsis {padding:0 .25rem;}

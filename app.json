@@ -5,7 +5,8 @@
     "pages/user_login/user_login",
     "pages/article/article",
     "pages/mall-home/mall-home",
-    "pages/message-home/message-home"
+    "pages/message-home/message-home",
+    "pages/write/write"
   ],
   "tabBar": {
     "custom": true,
@@ -21,7 +22,7 @@
       {
         "pagePath": "pages/mall-home/mall-home",
         "text": "商城"
-      }
+      }  
     ]
   },
   "window": {

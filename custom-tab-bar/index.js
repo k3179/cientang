@@ -13,6 +13,11 @@ Component({
       console.log(data)
       const url = data.url
       wx.switchTab({url})
-    }
+    },
+    bindWrite : function(){
+      wx.navigateTo({
+        url: "/pages/write/write"
+      })
+    }    
   }
 })

@@ -8,7 +8,7 @@
     <text class="tab-icon fa fa-shopping-cart"></text>
     <text class="tab-text">商城</text>
   </view>
-  <view class="tab-bar-one">
+  <view class="tab-bar-one" bindtap="bindWrite">
     <view class="write">
       <text class="icon fa fa-plus"></text>
     </view>

@@ -17,6 +17,7 @@
     duration="300" 
     bindchange="bindSwiperChange"
   class="swiper">
+    <!-- 慈恩堂 -->
     <swiper-item>
       <view class="content">
         <view class="article-list">
@@ -33,20 +34,18 @@
         </view>
       </view>
     </swiper-item>
+    <!-- /慈恩堂 -->
+    <!-- 体验谈 -->
     <swiper-item>
       <view class="content">
         <view class="review-category">
-          <text>家庭</text>
-          <text>姻缘</text>
-          <text>亲子</text>
-          <text>健康</text>
-          <text>学业</text>
-          <text>事业</text>
-          <text>财富</text>
+          <block wx:for="{{reviewCategoryList}}" wx:key="id">
+            <text data-id="{{item.id}}">{{item.name}}</text>
+          </block>
         </view>
         <view class="review-list">
           <block wx:for="{{reviewList}}" wx:key="id">
-            <view class="article" data-id="{{item.id}}" bindtap="bindArticleView">
+            <view class="review" data-id="{{item.id}}" bindtap="bindArticleView">
               <image src="{{item.src}}" mode="widthFix" class="article-image"></image>
               <view class="title">{{item.title}}</view>
               <view class="info">
@@ -57,12 +56,65 @@
         </view>
       </view>
     </swiper-item>
+    <!-- /体验谈 -->
+    <!-- 心情墙 -->
     <swiper-item>
-      <view>心情墙</view>
+      <view class="content">
+        <view class="memo-list">
+          <block wx:for="{{memoList}}" wx:key="id">
+            <view class="memo" data-id="{{item.id}}">
+              <view class="memo-date">
+                <text class="icon-feeling feeling-{{item.feeling}}"></text>
+                <view class="date"><text wx:if="{{item.month}}" class="month">7月</text><text class="day">{{item.day}}</text></view>
+              </view>
+              <view class="memo-content">
+                <view class="author">
+                  <image src="{{item.avatar}}" class="avatar" />
+                  <text>{{item.nick}}</text>
+                </view>
+                <view class="memo-text">{{item.text}}</view>
+                <view wx:if="{{item.photos.length==1}}" class="photos-big">
+                  <block wx:for="{{item.photos}}" wx:for-item="photo" wx:key="i">
+                    <image src="{{photo.src}}" mode="widthFix" />
+                  </block>
+                </view>
+                <view wx:elif="{{item.photos.length>1}}" class="photos">
+                  <block wx:for="{{item.photos}}" wx:for-item="photo" wx:key="i">
+                    <image src="{{photo.src}}" mode="widthFix" />
+                  </block>
+                </view>
+                <view class="info">
+                  <view wx:if="{{item.liked}}" class="liked">
+                    <text class="icon fa fa-heart"></text>
+                    <text class="num">{{item.like}}</text>
+                  </view>
+                  <view wx:else class="like">
+                    <text class="icon fa fa-heart-o"></text>
+                    <text class="num">{{item.like}}</text>
+                  </view>                  
+                  <view class="comment">
+                    <text class="icon fa fa-comment-o"></text>
+                    <text class="num">{{item.comment}}</text>
+                  </view>
+                  <view class="more">
+                    <view wx:if="{{showMemoMoreButtonsId==item.id}}" class="buttons">
+                      <text class="button">举报</text>
+                    </view>
+                    <view class="ellipsis" data-id="{{item.id}}" bindtap="bindClickMemoMore"><text class="fa fa-ellipsis-h"></text></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
     </swiper-item>
+    <!-- /心情墙 -->
+    <!-- 新闻 -->
     <swiper-item>
       <view>新闻</view>
     </swiper-item>
+    <!-- /新闻 -->
   </swiper>
 
 
